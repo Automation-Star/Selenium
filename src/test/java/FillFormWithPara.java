@@ -2,6 +2,8 @@ import ch.qos.logback.core.util.FileUtil;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -31,6 +33,18 @@ public class FillFormWithPara {
         WebElement actualMsg = driver.findElement(By.xpath("//div[@id='res']"));
         Assert.assertTrue(actualMsg.isDisplayed());
         successMsg = actualMsg.getText();
+
+         // select dropDown
+         WebElement dropdown  =driver.findElement(By.id("Country"));
+        Select select =  new Select(dropdown);
+        select.selectByIndex(1);
+
+        //Through JavaScript Executer
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("argument[0].click()" , dropdown);
+        DesiredCapabilities caps = new DesiredCapabilities();
+
+
 
         // print
         File ScreenShot =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);

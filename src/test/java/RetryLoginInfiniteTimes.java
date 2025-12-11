@@ -12,6 +12,7 @@ public class RetryLoginInfiniteTimes {
      */
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
+
        String result=  loginAttempts(driver,"standard_user1","secret_sauce1",3,"standard_user", "secret_sauce" );
        System.out.println(result);
         driver.quit();

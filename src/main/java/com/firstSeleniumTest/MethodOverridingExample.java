@@ -39,10 +39,4 @@ class Teacher extends School {
     }
 }
 
-//public class MethodOverridingExample{
-//        public static void main(String[] args){
-//         School intro = new Teacher();
-//         intro.introduce();
 
-       // }
-//}

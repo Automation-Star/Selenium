@@ -7,8 +7,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class CrossBrowserTestingEx {
     public static void main(String[] args) {
-       WebDriver driver;
-       String browser = "Chrome";
+        crossBr("firefox");
+
+    }
+
+        public static void crossBr(String browser){
+            WebDriver driver=null;
+       // String browser = "FireFox";
 
        if(browser.equalsIgnoreCase("FireFox")) {
            driver = new FirefoxDriver();
